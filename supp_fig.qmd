@@ -1,0 +1,167 @@
+# Supplements
+
+```{r}
+
+d.height.maize <- dma |>
+    filter(! plotID %in% out.plot.m) |>
+    group_by(Doses) |>
+    summarise(mHL = mean(m.heightL))
+
+bp.height.maize <- breakpoints(mHL ~ Doses, h = 5, data = d.height.maize)
+d.mod.bp.height.maize <- data.frame(Doses = d.height.maize$Doses, y.fitted = fitted(bp.height.maize))
+
+d.cover.soy <- dsa |>
+    group_by(Doses) |>
+    summarise(mC = mean(m.cover))
+
+bp.cover.soy <- breakpoints(mC ~ Doses, h = 5, data = d.cover.soy)
+d.mod.bp.cover.soy <- data.frame(Doses = d.cover.soy$Doses, y.fitted = fitted(bp.cover.soy))
+
+d.flower.maize <- dma |>
+    filter(! plotID %in% out.plot.m) |>
+    select(Doses, plotID, n_flower2) |>
+    group_by(Doses) |>
+    summarise(nf = mean(n_flower2) / nm)
+
+bp.flower.maize <- breakpoints(nf ~ Doses, h = 5, data = d.flower.maize)
+d.mod.bp.flower.maize <- data.frame(Doses = d.flower.maize$Doses, y.fitted = fitted(bp.flower.maize))
+
+d.pod.soy.x <- dsa |>
+    mutate(npod = cbind(n_pod2, ns - n_pod2))
+mod.pod.soy.x <- glm(npod ~ Doses, family = quasibinomial, data = d.pod.soy.x)
+
+d.pod.soy <- dsa |>
+    group_by(Doses) |>
+    summarise(mp = mean(n_pod2) / ns)
+
+bp.pod.soy <- breakpoints(mp ~ Doses, h = 5, data = d.pod.soy)
+d.mod.bp.pod.soy <- data.frame(Doses = d.pod.soy$Doses, y.fitted = fitted(bp.pod.soy))
+
+```
+::: {#figs-growthReprod}
+
+```{r}
+#| fig-height: 7
+#| fig-width: 9
+
+f.height.maize <- dma |>
+    filter(!plotID %in% out.plot.m) |>
+    group_by(Doses) |>
+    ggplot(aes(x = Doses, y = m.heightL)) +
+        geom_point(shape = 1) +
+        geom_line(data = d.mod.bp.height.maize, aes(x = Doses, y = y.fitted), lwd = 1.5) +
+        ylim(c(0, 200)) +
+        theme_bw() +
+        labsx +
+        labs(y = "Height (cm)")
+
+f.cover.soy <- dsa |>
+    group_by(Doses) |>
+    ggplot(aes(x = Doses, y = m.cover)) +
+            geom_point(shape = 1) +
+            geom_smooth(method = "loess", se = FALSE, col = "black", lwd = 1, lty = 2 ) +
+            geom_line(data = d.mod.bp.cover.soy, aes(x = Doses, y = y.fitted), lwd = 1.5) +
+            ylim(c(0, 3000)) +
+            theme_bw() +
+            labsx +
+            labs(y = "Mean crown cover (cm\u00B2)")
+
+# f2a <- dma |>
+#     filter(!plotID %in% out.plot.m) |>
+#     group_by(Doses) |>
+#     summarise(
+#         m = mean(m.heightL),
+#         sd = sd(m.heightL)) |>
+#     ggplot(aes(x = Doses, y = m)) +
+#         geom_point(size = 2) +
+#         geom_errorbar(aes(ymin = m - sd, ymax = m + sd)) +
+#         ylim(c(0,200)) +
+#         theme_bw() +
+#         labsx +
+#         labs(y = "Mean height (cm)")
+
+# f2b <- dsa |>
+#     group_by(Doses) |>
+#     summarise(
+#         m = mean(m.cover),
+#         sd = sd(m.cover)) |>
+#     ggplot(aes(x = Doses, y = m)) +
+#             geom_point(size = 2) +
+#             geom_errorbar(aes(ymin = m - sd, ymax = m + sd)) +
+#             ylim(c(0,3000)) +
+#             theme_bw() +
+#             labsx +
+#             labs(y = "Mean crown cover (cm\u00B2)")
+
+f.flower.maize <- dma |>
+    filter(! plotID %in% out.plot.m)  |>
+    ggplot(aes(x = Doses, y = n_flower2 / nm)) +
+        geom_jitter(height = 0, shape = 1 ) +
+        geom_line(data = d.mod.bp.flower.maize, aes(x = Doses, y = y.fitted), lwd = 1.5) +
+        ylim(c(0, 1)) +
+        theme_bw() +
+        labsx +
+        labs(y = "Proportion flowering")
+
+f.pod.soy <- ggplot(dsa, aes(x = Doses, y = n_pod2 / ns)) +
+    geom_jitter(height = 0, shape = 1) +
+    geom_function(fun = ~f.mod2(.x, mod.pod.soy.x, 1), lwd = 1, lty = 2) +
+    geom_line(data = d.mod.bp.pod.soy, aes(x = Doses, y = y.fitted), lwd = 1.5) +
+    ylim(c(0, 1)) +
+    theme_bw() +
+    labsx +
+    labs(y = "Proportion flowering")
+
+(f.height.maize + f.cover.soy) / (f.flower.maize + f.pod.soy) +
+    plot_annotation(tag_levels = 'A')
+```
+Vegetative growth after `r as.numeric(date.growth - date.semi.maize)` days (top) and proportion of individual with flower (bottom) as a function of quantity of frass amended `r as.numeric(date.flower2 - date.semi.maize)` days for maize (A), and after `r as.numeric(date.flower2 - date.semi.soy)` days for soybean (B).
+Top panels: each point represents the average height of maize (A) and crown cover of soy (B) across 10 replicates/plots.
+Bottom panels: each dot represents one plot and was jittered horizontally for visibility.
+The data was fitted with breakpoint analyses (black line), alternative model where chosen when the fit was poor (dashed black line) (see main text for details).
+:::
+
+![Optimal frass fertilizer application rate (top) and net gain (bottom) for maize (left) and soybean (right) as a function of the price of frass (x-axis) and the price of yield (y-axis). The vertical dashed line represent the how much one ton of frass would cost if based on the N equivalent from NPK. The dashed horizontal lines show the price according to FAO data. The red and magenta solid lines represent local and FOFIFA recommended dose, respectively. The hashed area show regions where adding fertilizer is not profitable.](figMath/figS-DoseGain.png){#figs-economic}
+
+
+
+```{r}
+fig.nyield.maize <-  dm |>
+    filter(!plotID %in% out.plot.m) |>
+    filter(!is.na(weightAll)) |>
+    count(Doses, Replicates) |>
+        ggplot(aes(x = Doses, y = n)) +
+            geom_smooth(method = "loess", se = FALSE, col = "black") +
+            geom_point() +
+            theme_bw() +
+            ylim(c(0, 30)) +
+            labsx +
+            labs(y = "Number of yielding individuals")
+
+fig.nyield.soy <-  ds |>
+    filter(!plotID %in% out.plot.s) |>
+    filter(!is.na(weightAll)) |>
+    count(Doses, Replicates) |>
+        ggplot(aes(x = Doses, y = n)) +
+            geom_smooth(method = "loess", se = FALSE, col = "black") +
+            geom_point() +
+            theme_bw() +
+            ylim(c(0, 39)) +
+            labsx +
+            labs(y = "Number of yielding individuals")
+
+```
+::: {#figs-nyield}
+
+```{r}
+#| fig-height: 4
+#| fig-width: 9
+
+fig.nyield.maize + fig.nyield.soy +
+    plot_annotation(tag_levels = 'A') +
+    plot_layout(axis_titles = "collect")
+```
+Number of individuals with yield for maize (A), and for soybean (B).
+Each dot represents one plot.
+The data was fitted with loess (black line).
+:::
