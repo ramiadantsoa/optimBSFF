@@ -68,7 +68,7 @@ source("code.R")
 
 # Introduction
 
-Agricultural production must approximately double by 2050 to meet projected global food demand  [@tilman2002], while simultaneously aligning with sustainable development goals.
+Agricultural production must approximately double by 2050 to meet projected global food demand [@tilman2002], while simultaneously aligning with sustainable development goals.
 Although agricultural extensification—land clearing to increase cultivated area—remains possible in some low-income countries, this strategy is environmentally unsustainable, carries substantial ecological costs such as deforestation and habitat loss [@MEA2005].
 Furthermore, extensification has contributed little to recent global yield gains [@foley2011].
 In contrast, agricultural intensification through improved water and nutrient use efficiency, adoption of appropriate technologies, and deployment of improved crop varieties offers a pathway to increase production while minimizing environmental pressures [@foley2011; @tilman2011; @triplett2008].
@@ -77,11 +77,11 @@ While yields in high-input systems are approaching ceilings, intensification in 
 Nutrient deficiency remains a principal constraint on crop productivity in low-income countries, making increased fertilizer use a central strategy for yield intensification.
 Although inorganic fertilizers such as NPK are available in sufficient quantities, their adoption is often limited by poor economic returns in low-income settings, where fertilizer-to-crop price ratios are high.
 For example, nitrogen application rates average only 1.9 kg ha^-1^ in Uganda, compared with a global mean of 139 kg ha^-1^ [@ragasa2025].
-In addition, the long-term and often excessive use of mineral fertilizers in high-input systems has been associated with soil degradation, nutrient imbalances, and water pollution [@vitousek1997; @carpenter1998; @guo2010].
+In addition, the long-term and often excessive use of mineral fertilizers in high-input systems has been associated with soil degradation, nutrient imbalances, water pollution, and greenhouse gas emissions [@vitousek1997; @carpenter1998; @guo2010;@wang2024; @sakschewski2025; @zhang2024; @menegat2022].
 Together, these economic and environmental constraints underscore the need for affordable and locally available nitrogen sources whose application rates can be optimized under realistic economic conditions.
 These constraints are particularly acute in Madagascar, where fertilizer access remains limited and yield gaps are large.
 
-The rapid expansion of insect farming presents a promising opportunity [e.g., @dzepe2024].
+The rapid expansion of insect farming presents a promising opportunity [e.g., @dzepe2024; @hutabarat2024; @mangindaan2022].
 Frass--a nutrient-rich organic residue produced during insect rearing--has emerged as a potential organic fertilizer.
 Numerous studies have evaluated the agronomic potential of frass [e.g., @beesigamukama2022; @houben2020; @kagata2012].
 Among insect-based fertilizers, frass derived from Black Soldier Fly (*Hermetia illucens*) farming has received particular attention [@abd-manan2024].
@@ -89,11 +89,10 @@ Key agronomic properties of BSF frass, including phytotoxicity, effects on plant
 Practically, BSF frass can achieve crop yield comparable to that of conventional NPK fertilizers [@adin-yeton2019; @houben2020].
 Such foundational agronomic assessments are essential prerequisites for scaling up insect-based fertilizers from experimental contexts to industrial and commercial applications [@ashworth2025].
 
-Black Soldier Fly production systems can generate substantial quantities of frass relative to the volume of organic waste processed. Depending on rearing conditions and feedstock composition, BSF larvae typically convert 15–25% of the original waste mass into larval biomass while leaving 40–60% as residual frass and substrate material [@lalander2015; @barragan-fonseca2017].
-When reared on agro-industrial waste streams such as brewery spent grain, which are produced in large volumes in many urban centers in the Global South, BSF production can therefore generate significant quantities of frass suitable for agricultural use.
-For example, brewery spent grain production exceeds tens of thousands of tonnes annually in many urban centers, providing a continuous feedstock for insect rearing systems.
-This coupling of organic waste recycling with insect production creates a locally available fertilizer source that could partially substitute for imported mineral fertilizers in smallholder farming systems.
-In northern Madagascar, brewery spent grain from industrial breweries such as STAR represents a continuous and locally abundant organic waste stream that can sustain BSF production systems and generate large quantities of frass suitable for agricultural use.
+Black soldier fly (BSF) production systems can generate substantial quantities of frass relative to the volume of organic waste processed [@hutabarat2024]. Depending on rearing conditions and feedstock composition, BSF larvae typically convert 15–25% of the initial waste mass into larval biomass, while 40–60% remains as residual frass and substrate material [@lalander2015; @barragan-fonseca2017].
+In Madagascar, BSF rearing systems have access to large and continuous feedstock streams. Agro-industrial by-products constitute a primary source. For example, STAR Madagascar produces over 90,000 tons of brewery spent grain annually [@star2025], part of which is currently valorized by EXA Feed [@exa_feed2023; @miarakap_2022_exa_feed]. A second important source is food waste, estimated at around 15% for Madagascar [@instat2024].
+In urban areas, these organic waste streams have already been leveraged for industrial-scale BSF production, as illustrated by initiatives such as BSF Tamatave [@bsf_tamatave2023; @miarakap_2023_bsf_tamatave]. In rural areas, similar organic waste could support smaller-scale, family-operated production systems.
+Recent evidence indicates a high level of acceptance of insect-based products among the population [@ramaroson2026]. In addition, the establishment of national standards authorizing BSF larvae and derived products for human consumption may further incentivize the expansion of BSF farming [@bnm2025]. This growth is expected to generate increasing quantities of frass, with potential applications as an organic fertilizer in agricultural systems.
 
 Translating results from laboratory and small-scale field experiments to extensive farming systems remains challenging.
 Experimental trials often strive for homogeneity in soil and environmental conditions, which rarely reflects on-farm variability.
@@ -124,7 +123,7 @@ Soil analyses indicated acidic conditions (pH = 5.86), very low total nitrogen c
 | 5.86        | 0.182       | 1.204 | 2.076    | 6.7     | 24.45   | 0.203        | 16.37     |
 : Soil properties. OM stands for organic matter. {#tbl-soil}
 
-The experiment followed agroecological management practices [@triplett2008; @hobbs2008; @rossi2024;  @alemie2026; @du2022].
+The experiment followed agroecological management practices [@triplett2008; @hobbs2008; @rossi2024; @alemie2026; @du2022].
 No tillage was performed and no machinery was used to avoid soil compaction.
 All crops were grown under rainfed conditions without irrigation.
 On `r print.date(date.soil.prep)`, existing surface vegetation was cleared manually, and the removed biomass was redistributed uniformly across the site as mulch.
@@ -148,7 +147,7 @@ Maize (*Zea mays* L.) variety used was IRAT200, purchased from AgriVet (Antsiran
 Soybean (*Glycine max* L.) variety was OC11, obtained from Honey of Madagascar (Antananarivo, Madagascar), and is commonly promoted for local production.
 
 ## Experimental design and fertilizer application
-For each crop, we tested twelve frass application rates to characterize yield responses across a broad fertilizer range: a control without fertilizer (0 t ha ^-1^), two low rates (0.4 and 0.8 t ha^-1^), seven intermediate rates increasing in 2 t ha^-1^ increments  (3, 5, 7, 9, 11, 13, and 15 t ha^-1^), and two high, intentionally excessive rates (20 and 30 t ha^-1^). The twelve application rates were selected to cover a wide range of plausible fertilizer doses while maintaining sufficient replication; we distributed the treatments into three tiers (low, intermediate, and excessive) to prioritize higher data density within the intermediate range while still exploring a wide parameter space. Each fertilizer treatment was replicated five times per crop. In total, 60 plots were established per crop. Treatments were arranged in a randomized complete block design (RCBD).
+For each crop, we tested twelve frass application rates to characterize yield responses across a broad fertilizer range: a control without fertilizer (0 t ha ^-1^), two low rates (0.4 and 0.8 t ha^-1^), seven intermediate rates increasing in 2 t ha^-1^ increments  (3, 5, 7, 9, 11, 13, and 15 t ha^-1^), and two high, intentionally excessive rates (20 and 30 t ha^-1^).  The range of tested rates encompass both locally documented smallholder practice (1.2 t ha^-1^; [@solofondranohatra2025]) and the nationally recommended dose for maize (3.6 t ha^-1^; [@fofifa2024]), while extending to rates consistent with or exceeding those reported in published BSF frass field trials for maize [@beesigamukama2020] and soybean [@kigeso2025; @yudistira2024]. This design ensures that our dose–response inferences are grounded in agronomically relevant contexts while providing sufficient range to characterize the full shape of the response curve. The twelve application rates were selected to cover a wide range of plausible fertilizer doses while maintaining sufficient replication; we distributed the treatments into three tiers (low, intermediate, and excessive) to prioritize higher data density within the intermediate range while still exploring a wide parameter space. Each fertilizer treatment was replicated five times per crop. In total, 60 plots were established per crop. Treatments were arranged in a randomized complete block design (RCBD).
 
 Plots were established on `r print.date(date.plot.create)`.
 For maize, each plot measured of 2 m x 2 m, and consisted of three rows of ten equally spaced plants.
@@ -182,24 +181,24 @@ Because maize and soybean were sown one day apart, all measurements are reported
 Although the primary objective of the study was to quantify yield responses to fertilizer application rate, additional data were collected throughout the growing season to characterize crop establishment, vegetative growth, and reproductive development.
 
 ### Germination
-Germination was assessed `r as.numeric(date.germination - date.semi.maize)` DAS for maize and `r as.numeric(date.germination - date.semi.soy)` DAS for soybean.
-For each plot, the proportion of emerged seedlings relative to the number of seeds sown was recorded.
+Germination was assessed `r as.numeric(date.germination - date.semi.maize)` DAS for maize and `r as.numeric(date.germination - date.semi.soy)` DAS for soybean, following the approach used in comparable BSF frass field trials [@solofondranohatra2025; @kigeso2025].
+For each plot, the proportion of emerged seedlings relative to the number of seeds sown was recorded [@solofondranohatra2025].
 
 ### Vegetative growth and reproductive development
-In maize, vegetative growth was measured `r as.numeric(date.growth - date.semi.maize)` DAS.
-Total plant height (from the soil surface to the apex of the tallest leaf), height to the highest fully expanded leaf collar, and the number of visible leaf collars were recorded for each plant.
+In maize, vegetative growth was measured `r as.numeric(date.growth - date.semi.maize)` DAS, following standard agronomic protocols [@zhang2022].
+Total plant height (from the soil surface to the apex of the tallest leaf), height to the highest fully expanded leaf collar, and the number of visible leaf collars were recorded for each plant .
 In soybean, vegetative growth was measured `r as.numeric(date.growth - date.semi.soy)` DAS.
-Vegetative growth was quantified as canopy cover, estimated by measuring the maximum plant length and the perpendicular width, and computing the area of an ellipse using these two orthogonal axes.
+Vegetative growth was quantified as canopy cover, estimated by measuring the maximum plant length and the perpendicular width [@patjaiko2025], and computing the area of an ellipse using these two orthogonal axes.
 
 Reproductive development was evaluated `r as.numeric(date.flower2 - date.semi.maize)` DAS for maize and `r as.numeric(date.flower2 - date.semi.soy)` DAS for soybean.
-For each plant, reproductive transition was assessed by the presence of flowers in maize and pods in soybean.
+For each plant, reproductive transition was assessed by the presence of flowers in maize and pods in soybean [`Wisconsin data` or other refs?].
 
 ### Harvest and yield determination
-Maize was harvested manually `r as.numeric(date.yield.maize2b - date.semi.maize)` DAS, when all ears had fully matured and dried in the field.
-For maize, each plant within a plot was harvested individually. The number of ears per plant was recorded, and for each ear, length, diameter, and fresh weight were measured. Ears were then air-dried and manually threshed to determine dry grain weight.
+Maize was harvested manually `r as.numeric(date.yield.maize2b - date.semi.maize)` DAS, when all ears had fully matured and dried in the field, following the individual-plant harvest protocol [@beesigamukama2020].
+For maize, each plant within a plot was harvested individually. The number of ears per plant was recorded, and for each ear, length, diameter, and fresh weight were measured. Ears were then air-dried and manually threshed to determine dry grain weight [@solofondranohatra2025].
 Plant-level yield was calculated as the sum of dry grain weights across all ears produced by an individual plant.
 
-Soybean was harvested manually between `r as.numeric(date.yield.soy1a - date.semi.soy)` and `r as.numeric(date.yield.soy2 - date.semi.soy)` DAS, once all pods had dried but before they burst open.
+Soybean was harvested manually between `r as.numeric(date.yield.soy1a - date.semi.soy)` and `r as.numeric(date.yield.soy2 - date.semi.soy)` DAS, once all pods had dried but before they burst open [@kigeso2025; @yudistira2024].
 For each plant, pods were threshed and the weight of dry grain was recorded.
 
 Plot-level yields were converted to tonnes per hectare (t ha^-1^) based on the harvested plot area and used as the primary metric for agronomic and economic analyses.
@@ -214,7 +213,7 @@ Nine days after sowing, unusually heavy rainfall caused temporary flooding in `r
 This approach allowed for a more accurate characterization of the nutrient dose-response relationship by removing flood-induced experimental noise.
 
 ## Germination and growth
-The effect of fertilizer application rate on germination was analyzed using generalized linear mixed-effects models (GLMMs) with a binomial error distribution.
+The effect of fertilizer application rate on germination was analyzed using generalized linear mixed-effects models (GLMMs) with a binomial error distribution, consistent with the analytical approach used in comparable field studies [@solofondranohatra2025].
 The application rate was set as a fixed effect whereas plot replicate was included as a random effect to account for the natural variability above.
 Models were fitted using the *glmer* function in the lme4 package in R.
 
@@ -234,7 +233,7 @@ A positive coefficient indicates that yield increases with vegetative growth, wh
 Linear regressions were then used to test whether these coefficients varied systematically with fertilizer application rate.
 
 ## Nitrogen agronomic efficiency
-Nitrogen agronomic efficiency [NAE, @baligar2001] was calculated as:
+Nitrogen agronomic efficiency (NAE, Equation @eq-AE) was calculated following the equations stated by Baligar et al. [@baligar2001]:
 
 $$
   \text{NAE(dose)} = \frac{\text{yield(dose) - yield(0)}}{\text{dose} \times 0.0346}
@@ -245,7 +244,7 @@ where dose is fertilizer application rate in t ha^-1^, yield(dose) is the predic
 ## Economic profitability
 Economic performance was evaluated using the marginal value-cost ratio (MVCR) [@ragasa2025].
 MVCR represents the ratio of the additional value of crop yield generated by fertilizer application to the cost of the fertilizer applied.
-MVCR was calculated as:
+MVCR (Equation @eq-return) was calculated using the equation stated by Ragasa et al. [@ragasa2025]:
 
 $$
   \text{MVCR} =
@@ -412,7 +411,7 @@ Nevertheless, examining the relationship between yield and a snapshot of early g
 In maize, yield saturated at both the individual plant and total plot levels, indicating that the crop had reached a biological limit [@zhang2022].
 In contrast, soybean yield saturated at the plot level but not at the individual plant level.
 Mathematically, this discrepancy arose because reduced plant density at higher fertilizer doses capped total yield (see Fig. S3).
-Biologically, it reflects a well-documented trade-off in soybean, where density-driven competition for light prompts resource allocation toward vegetative canopy growth at the expense of pod development [ @patjaiko2025; @baio2025; @pierik2014].
+Biologically, it reflects a well-documented trade-off in soybean, where density-driven competition for light prompts resource allocation toward vegetative canopy growth at the expense of pod development [@patjaiko2025; @baio2025; @pierik2014].
 Consistent with our field observations of dense canopy overlap at high doses and the lack of relationship between fertilizer dose and reproductive development (Fig. S1). Furthermore, the relationship between growth and yield becomes weaker at high doses, confirming that spatial competition decoupled vegetative growth from reproductive output. Our narrow 15-cm inter-plant spacing—compared to the 20 cm reported in other studies [e.g., @ran2023]—likely exacerbated this effect, though varietal differences may also play a role [@seraglio2025]. Ultimately, while our primary aim was optimizing fertilizer application rates, these findings highlight planting density as a critical co-factor for yield optimization [e.g., @zhang2022].
 
 Reported NAE values vary widely across cropping systems and environments, and low fertilizer responsiveness has been documented in many smallholder contexts [@roobroeck2021].
